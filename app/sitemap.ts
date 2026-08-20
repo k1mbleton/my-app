@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cemreduralblog.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL as string;
 
   const posts = getAllPosts();
   const postUrls = posts.map((post) => ({
